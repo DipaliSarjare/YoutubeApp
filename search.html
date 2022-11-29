@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Video</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="toggle-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+       <img class="logo" src="https://static.vecteezy.com/system/resources/previews/003/206/623/original/youtube-editorial-app-icon-free-vector.jpg" alt="">
+       <div class="search-box">
+    <input type="text" id="query" placeholder="Search">
+    <button class="search-btn" onclick="search()">Search</button>
+    <img src="data:image/png;base64,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" alt="">
+</div>
+<div class="user-options">
+    <img class="icon" src="https://cdn2.iconfinder.com/data/icons/add-item/32/add_video_camera_plus-512.png" alt="">
+    <img class="icon" src="https://static.thenounproject.com/png/1714217-200.png" alt="">
+    <img class="icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAMAAACahl6sAAAAe1BMVEX///8AAAD7+/vX19fr6+vb29stLS0GBgYUFBQjIyMvLy/4+Pg6OjqNjY0hISEcHByXl5ewsLB0dHRiYmIRERGRkZFvb2/R0dHn5+c0NDQ/Pz+Dg4PGxsacnJynp6fx8fG7u7t6enpVVVVNTU22trZoaGjBwcFISEhZWVkWbhXLAAAIYklEQVR4nO2da3eqOhCG6xUQUbwA3gWr1v//C0/t7j7HdwgYyUzAs3jW6peuNmRIMplLMnx8tLS0tLS0tLRo0Z9tF5vhxPWGm8X2fKy7OxVJsmEHGWW9ujv1Mn5IpfiVZe/X3bVX8ANXKcadadStu3vanL1CMe4M07o7qMdxUSrGncs7zK9EvTjIoDR/1V+XGnJ0Ostd3R19QupoydHpOGndXS2nrzOx7oz6dXf1CZqSNF4OTUneQA4tSd5CDiLJ9JRFYZSdpu8nx4Mk7oOV2Mvcd5PjryTLCDdwP1i+mRx/JPla5X692ryZHHdJ5srfx28mx/c8evH3LS0tLS1sDM5htvjcjNfr8eZzkYXnQd09ep3+LB4rnEVnHM/eaEdMtutSI36b1N1DHfrB6Kk/0hkGeUOsWSQLzeiDc2tyHCX51JPiD19NFWVwekWMH1GaGKfzM92Q1gNO3LikybU8cF3IJK2750A3qybGnbhBLspqXF2O732lMRv+rjito8UyrVuCPxwqrHLCvm4Z7kTF/Zt+xtEh3SXJLj1E8ee0+C+3dUvx8bEt6NpEYR5+m5JFyi2ro++PBMpuufNCuzCZq1dUzWMSqvo0LM9B+welWRnZ6rOKmaJD3kHj/1QR+5l8f4tI8vrKCbT2t26UzzU6tbkp/bwaGmtvbquv3D9PajK8uvmuZK+casjriU+xvpaSU7zOi7M8zU2vQKan5eQWiPvyHO/RuenU4KD4VPFMKth+A7o/juybwnRiTSvZsCs6JtYn14BMrGXFSTEg68SxbdOTMINzrdrQlbwRy5orJTMirN4UtXIqv5JKkFDizaStG7Y15uqjDgd8ttmWfJxgazZtLqJ6DWfDFVtb8/RRB2L0Xkzbu2B7qXkPNcGgiWucKDiir7Xh6KMOO3yBBhrrL3ts0ZY9j8dIPYZzvF00VYznqh593MI0HMLnoBp07DgmuINxDMg3OCR24ly41BlWyB1cJVaW+wAe6TLZ3T4qLhumI9rv6tNMFZhDszaseTSz2F4dDrQFg2sl9UBcevJZX9RZTEs937C83sKMJ+Mxhj40fOJrWE0XXFNWNbl5bNnlbFkF2lmsygUDdtL2Fj6NVd2j3pIOzkPQYcrbNoSGpBcJbMAL3rYXgi+JgsPPrCPR3pLdSdDJZbaIetD4mbdxQvb4KHYVCapdNqkIa/2Lu3VIuMiudghBsaeUwQIecrf+iA+zmMXJfQRWuyN5pxeXI3tWJpFUJQAqLfakDA64pNoCA2XC3z7s7YwuQg5YjexKixjAksdTwBkRCKOBkWKUq3gCuKMCO1b22L5kTAi2EQFvFNxdj7/9f4FgqYBWAa0o6CSiehTw4dD/lNsRMRQksGHhhit3QQOfIxAyx0iK3NaOIy/wgK703P0FsutLiSeANpHLuMsrFXCt5IwtyCuJqHkwtuQS7iCIiOMDiSt2f+df9v9LQUYST4AjFXIReTCFRE5ajOwIAn6VSFIJ0mFy4V9IH4pY2dJ+wi/gIIocdYPIlpyLCEfEmCPYtp7wAww8W2L6kVh88v4AOQWRpQjqRCyzgO6IiCWEgTOpszX4FJHT33YyC6C0ZEKzXbDjpdQWbLtChyxAnwitdky7xTIPAbUl5LVjZlrIWcB1KGNt4V01oRAHhh9E5hZGHsROGeMhIYlACp4tFTPocAIL6K0Vni0VC9WgSlny74moTgQzlTi32M8EkgERTILjATSXe0hwhTiC5yuO+MqYVwk5Di+azMe7C7zvrEtu8IiWZkHDkdcTJbdRhQ+zkotojDYEvQQqe3CHnBvouGyTi14CFb87RIaELQ9Oy46nXA0XQVYJl7KnFwUFDgpQyKUrnrlM707auITaJwUulgwWUe62t5XCH+TSVcUrzY/0aPEPz85F7Q19rKHqSnJFTCxdpaW3qjue2ZjcqBwi8UUVdHIZBlBpNba1vQoA9B2aHRYihTaWFq/NH0kZBTObi6y5jUVBBmQfNtu+ciUwN6GVUpGrkKotQ0tVVeNnHAiPSy/ISdExTb5OFC1+412kaquuDouCemJmBxRKqssNF/uENZDt76JbwYu7Y5YteVJezlkvotR80XQHs+3t2bclzA7xaNXJc0anLDwnFeIdq90sir88raeYCXItKYCXF8gbny5ZsJ9dk8HqqJx23eOqt0tn+yBbfK6nr5QTnBrGCfovV1r9T66lO514w+Fw9P3jeZPp0qAO4s1cuTz5vJYVPBbPyo8MK2Oa4kZcFp4fvbJUmJmyifEjysGo7mp1xgf2pGsSW59hbiyTveieb3ofQGNheTsLXk7qXgurkbLixam8CzfY30TXvnsK7bk9vf1lbV7mN8/osrdfGNDfhZcNmwJYji/hrs7y2P1rOD+ZjM63yTkPr035REFR+WINaqmWWQgWMTok1/NhHwXbbZbN5/HlconjeJ5tg2h/mKU7jIrXWB1XAeZmnkTxMNbemGLrP+A5K7d0J8MyQSK3NwzASF7pqR6cWeIFUF4Ei65PSvToEXfTRpSMfwAPbpYlUbBsk9O4T/aQKHFh9oEkwGoqulwCqd3oFiijHrGfU5t91IPEpdTJsgExN0UuoRhC6pt2XEX85kpNs2bthr/QyL2zJbrLz8hf2K0kq82OdrPjPTrc3UPeJWvol7niXEc703n6E0k9pnOFM2YtIfkivtoLdodDtdcybNDXeRDFtxZKqKNIvC5Uc5XSSI31F/V3VZTU+r2R52S6cjTgqzzlaDq9zXJwlew1Vrwjdw2Xkd3T8J1p9skWz7JcDNknW8xKBmXSaLVL8YOCEKSr9zGiBuGHik+5rsu/cNVUetvNgwZzNtsG2yTP8JNDML9c5sEhecuxaGlpaWlpaamHfwASJ2TTvLgbQgAAAABJRU5ErkJggg==" alt="">
+    <div class="user-dp">
+        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="">
+    </div>
+</div>
+</nav>
+<!--slidebar -->
+<div class="side-bar">
+<a href="#" class="links active"><img src="https://static.thenounproject.com/png/2495430-200.png" alt="">Home</a>
+<a href="#" class="links"><img src="https://cdn1.vectorstock.com/i/1000x1000/77/10/compass-icon-explore-symbol-vector-22537710.jpg" alt="">Explore</a>
+<a href="#" class="links"><img src="https://logowik.com/content/uploads/images/t_youtube-shorts-black3609.jpg" alt="">Shorts</a>
+<a href="#" class="links"><img src="https://image.pngaaa.com/675/4792675-middle.png" alt="">Subscriptions</a>
+<hr>
+<a href="#" class="links"><img src="https://static.thenounproject.com/png/2481186-200.png" alt="">Library</a>
+<a href="#" class="links"><img src="https://image.shutterstock.com/image-vector/social-media-account-history-icon-260nw-1913455603.jpg" alt="">History</a>
+<a href="#" class="links"><img src="https://cdn.icon-icons.com/icons2/1744/PNG/512/3643741-media-multimedia-play-video-videos_113452.png" alt="">Your video</a>
+<a href="#" class="links"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3wDExz_APVBxO1ksHUVugKeImQ6vsPApqXmbTs-tzWc4rdEcDpGjf8jVJcmXr0IaondY&usqp=CAU" alt=""> Watch later</a>
+<a href="#" class="links"><img src="https://i.dlpng.com/static/png/6487160_preview.png" alt=""> liked videos</a>
+<a href="#" class="links"><img src="https://serenesforest.net/wp-content/uploads/2016/02/youtube-playlist-icon.png" alt=""> Show more</a>
+</div>
+<div class="filters">
+    <button class="filter-options active">all</button>
+    <button class="filter-options">music</button>
+    <button class="filter-options"> javascript</button>
+    <button class="filter-options">CSS</button>
+    <button class="filter-options">tailers</button>
+    <button class="filter-options">movies</button>
+    <button class="filter-options">indian idol</button>
+    <button class="filter-options">entertainment</button>
+    <button class="filter-options">HTML</button>
+    <button class="filter-options">trending</button>
+    <button class="filter-options">Indian pop music</button>
+</div>
+    <div id="container"></div>
+</body>
+</html>
+<script>
+    const API_KEY="AIzaSyDeD2Vu8h3zaLc0aY-lpbKOpHLcLfuTjfg";
+"https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=thor&key"
+"https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=kgf&key=AIzaSyAp7LMwud7e0cT814Idlf0osd9yk0k3qpU";
+const url1=`https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=40&regionCode=IN&key=${API_KEY}`
+ fetch(url1).then(function(res){
+    return res.json();
+}).then(function(res){
+    console.log(res)
+    appendOnHome(res.items);
+});
+
+
+function appendOnHome(data){
+    let box=document.getElementById("video-container");
+    box.innerHTML=null;
+    data.forEach((el)=>{
+        let img=document.createElement("img");
+        img.src=el.snippet.thumbnails.medium.url;
+        h4=document.createElement("h4");
+        h4.innerText=el.snippet.title;
+        let div=document.createElement("div");
+        div.style.cursor='pointer';
+        div.onclick=()=>{
+            playVideo(el)
+        };
+        div.append(img,h4);
+        box.append(div);
+    });
+};
+
+let playVideo=(data)=>{
+localStorage.setItem("video",JSON.stringify(data));
+window.location.href="video.html";
+
+}
+
+let filter = async () => {
+    let data = await getData(q);
+    console.log(data);
+    data = data.filter((el) => {
+    return (el.snippet.channelId === "UCvC4D8onUfXzvjTOM-dBfEA");
+    });
+    append(data);
+  };
+
+</script>
